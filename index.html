@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StoryMap Interactivo | Plantilla uMap</title>
+  <link rel="icon" type="image/png" href="https://umap.openstreetmap.fr/static/img/favicon.png">
+  <style>
+    /* ----------- ESTILOS BASE ----------- */
+    :root {
+      --bg-color: #f8f8f8;
+      --text-color: #222;
+      --accent-color: #0066cc;
+      --chapter-bg: #ffffffcc;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+      background: linear-gradient(135deg, var(--accent-color), #0099ff);
+      color: white;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      max-width: 600px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+
+    /* ----------- CAPÍTULOS ----------- */
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .chapter {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background-color: var(--chapter-bg);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-radius: 16px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .chapter:hover {
+      transform: scale(1.01);
+    }
+
+    .chapter img {
+      max-width: 100%;
+      border-radius: 12px;
+      margin: 1rem 0;
+    }
+
+    .chapter h2 {
+      margin-bottom: 0.5rem;
+      color: var(--accent-color);
+    }
+
+    .chapter p {
+      text-align: justify;
+      margin-bottom: 1rem;
+      width: 100%;
+    }
+
+    .map-frame {
+      width: 100%;
+      height: 480px;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .fullscreen-link {
+      width: 100%;
+      margin-top: 0.75rem;
+      text-align: right;
+    }
+
+    .fullscreen-link a {
+      color: var(--accent-color);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #666;
+      border-top: 1px solid #ddd;
+      background-color: #fafafa;
+    }
+
+    footer a {
+      color: var(--accent-color);
+      text-decoration: none;
+    }
+
+    /* ----------- RESPONSIVE ----------- */
+    @media (max-width: 700px) {
+      header h1 { font-size: 1.8rem; }
+      .chapter { margin: 2rem 1rem; padding: 1.5rem; }
+      .map-frame { height: 360px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>StoryMap Interactivo</h1>
+    <p>Una narrativa visual con mapas interactivos creados en uMap. Desplázate para descubrir cada capítulo.</p>
+  </header>
+
+  <main>
+
+    <!-- 🔹 CAPÍTULO 1 -->
+    <section class="chapter">
+      <h2>Capítulo 1 — Introducción</h2>
+      <img src="assets/imagen1.jpg" alt="Imagen descriptiva del capítulo 1">
+      <p>
+        En un entorno de alta sensibilidad social, este informe tiene como objetivo proporcionar a los ciudadanos de Madrid, Cataluña y la Comunidad Valenciana, las regiones con mayor recepción de flujo migratorio. En este caso Madrid engloba tres municipios bajo analisis; Madrid Ciudad, Parla y Mostoles.
+      </p>
+
+      <iframe class="map-frame"
+        src="https://umap.openstreetmap.fr/en/map/mapa-inmigracion-hispanoamericana-en-madrid-valenc_1400369?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=true&editMode=disabled&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=none&captionBar=false&captionMenus=true#8/39.880235/-3.515625"
+        allowfullscreen
+        allow="geolocation"
+        loading="lazy">
+      </iframe>
+    </section>
+
+    <!-- 🔹 CAPÍTULO 2 -->
+    <section class="chapter">
+      <h2>Capítulo 2 — Desarrollo</h2>
+      <img src="assets/imagen2.jpg" alt="Imagen descriptiva del capítulo 2">
+      <p>
+        La Comunidad Valenciana reproduce igualmente un esquema de centralización migratoria, aunque de forma menos intensa que Madrid. València ciudad concentra el núcleo principal del asentamiento, mientras que el flujo se prolonga hacia otras ciudades relevantes como Alicante y Torrevieja. Lejos de dispersarse homogéneamente por el territorio, la inmigración se articula alrededor de los principales centros urbanos, lo que refuerza la idea de que la atracción migratoria depende en gran medida del peso económico, la infraestructura y la capacidad de integración de las ciudades medias y grandes.
+      </p>
+
+      <iframe class="map-frame"
+        src="https://umap.openstreetmap.fr/en/map/mapa-inmigracion-hispanoamericana-en-madrid-valenc_1400369?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=true&editMode=disabled&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=none&captionBar=false&captionMenus=true#8/39.609920/-0.733337"
+        allowfullscreen
+        allow="geolocation"
+        loading="lazy">
+      </iframe>
+
+      <p class="fullscreen-link">
+        <a href="https://umap.openstreetmap.fr/en/map/mapa-inmigracion-hispanoamericana-en-madrid-valenc_1400369?scaleControl=false&miniMap=false&scrollWheelZoom=true&zoomControl=true&editMode=disabled&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=none&captionBar=false&captionMenus=true#8/39.609920/-0.733337" target="_blank" rel="noopener noreferrer">
+          See full screen
+        </a>
+      </p>
+    </section>
+
+    <!-- 🔹 CAPÍTULO 3 -->
+    <section class="chapter">
+      <h2>Capítulo 3 — Conclusiones</h2>
+      <img src="assets/imagen3.jpg" alt="Imagen descriptiva del capítulo 3">
+      <p>
+        Cataluña confirma nuevamente esta pauta de concentración. Barcelona emerge como el principal polo receptor y reproduce el mismo comportamiento observado en otras comunidades: la inmigración se asienta prioritariamente en la capital y en su entorno urbano inmediato. Este patrón sugiere que los flujos migratorios no se orientan de forma significativa hacia ciudades pequeñas, espacios rurales o territorios en declive demográfico, sino hacia áreas metropolitanas capaces de ofrecer redes, empleo, servicios y mayor capacidad de absorción social.
+      </p>
+
+      <iframe class="map-frame"
+        src="https://umap.openstreetmap.fr/en/map/mapa-inmigracion-hispanoamericana-en-madrid-valenc_1400369?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=true&editMode=disabled&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=none&captionBar=false&captionMenus=true#9/41.642131/2.129974"
+        allowfullscreen
+        allow="geolocation"
+        loading="lazy">
+      </iframe>
+
+      <p class="fullscreen-link">
+        <a href="https://umap.openstreetmap.fr/en/map/mapa-inmigracion-hispanoamericana-en-madrid-valenc_1400369?scaleControl=false&miniMap=false&scrollWheelZoom=true&zoomControl=true&editMode=disabled&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=none&captionBar=false&captionMenus=true#9/41.642131/2.129974" target="_blank" rel="noopener noreferrer">
+          See full screen
+        </a>
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Creado con <a href="https://umap.openstreetmap.fr/es/" target="_blank">uMap</a> y HTML5 · Plantilla adaptable por <strong>María Ariza</strong> · © 2025</p>
+  </footer>
+
+</body>
+</html>
